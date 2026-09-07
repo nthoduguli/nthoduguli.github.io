@@ -7,59 +7,48 @@ Personal site — CV, research, and projects. Plain HTML/CSS/JS, no build step, 
 ```
 index.html                        all page content
 styles.css                        all styling (colors/fonts as CSS variables at the top)
-script.js                         scroll-based active-nav-link highlighting
+script.js                         mobile sidebar toggle + scroll-based active-link highlighting
 README.md                         this file
 assets/headshot.jpeg              profile photo
-assets/Nikitha_Thoduguli_CV.pdf   downloadable CV (linked from the intro)
-assets/research/harvard.svg       thumbnail for the Harvard/Zitnik project
-assets/research/csail.svg         thumbnail for the MIT CSAIL/Kellis project
-assets/research/course.svg        thumbnail for the Deep Learning for Biology course project
-assets/research/infinitopes.svg   thumbnail for the Infinitopes project
-assets/research/divider-*.svg     four small illustrations marking section breaks
+assets/Nikitha_Thoduguli_CV.pdf   downloadable CV
+assets/research/zitnik-abstract.png   figure — multi-modal LLM benchmark (Harvard/Zitnik)
+assets/research/kellis-abstract.png   figure — genome assembly & linCREs (MIT CSAIL/Kellis)
+assets/research/course-abstract.png   figure — VAE + diffusion architecture (course project)
+assets/research/infinitopes-logo.png  real logo — Infinitopes (used as the research card image)
+assets/logos/mbg.png                real logo — MIT Biotech Group
+assets/logos/gha.png                real logo — Global Health Alliance
+assets/logos/camp-kesem.png         real logo — Camp Kesem
+assets/logos/mit-be.png             real logo — MIT Biological Engineering (20.A06 TA)
+assets/logos/mit-physics.png        real logo — MIT Physics (8.02 TA)
+assets/logos/mit-seal.png           real logo — MIT seal (Education)
 ```
 
-## Deploy to GitHub Pages (free hosting)
+## Deploy to GitHub Pages
 
-1. **Create a repository** on GitHub.
-   - For a *user site* at `https://<your-username>.github.io`, name the repo exactly `<your-username>.github.io`.
-   - For a *project site* at `https://<your-username>.github.io/<repo-name>`, name it whatever you like.
+1. Push everything above (keeping the `assets/` structure) to a repo named `<your-username>.github.io` for a user site, or any name for a project site.
+2. In the repo: **Settings → Pages** → Source: **Deploy from a branch**, branch **main**, folder **/(root)**.
+3. Visit the URL GitHub shows on that page after a minute or two.
 
-2. **Push all the files above** (keeping the `assets/` folder structure intact):
+## Layout
 
-   ```bash
-   git add .
-   git commit -m "Initial site"
-   git branch -M main
-   git remote add origin git@github.com:<your-username>/<repo-name>.git
-   git push -u origin main
-   ```
+Left sidebar for navigation (name + section links), matching Ada's page. Main content: photo, name, a row of icon links (Email, Scholar, LinkedIn, GitHub, CV), then the bio — no separate "About" label.
 
-3. **Turn on GitHub Pages**: in the repo, go to **Settings → Pages**. Under "Build and deployment," set Source to **Deploy from a branch**, branch **main**, folder **/(root)**. Save.
+**Featured Research** uses a publication-card format (image left, text right): a date/status label, a project title as the heading, an institution/supervisor byline, your contribution bullets, a manuscript-status line where applicable, pill-style "Code" buttons linking to your repos, and bracketed monospace tags (`[computational]`) at the bottom of each card.
 
-4. Wait 1–2 minutes, then visit the URL GitHub shows on that page.
+**Leadership** and **Education** entries each have a small logo card to the left of the text.
+
+## Placeholders
+
+None — every logo, figure, and link on the page is real. If you add or change a project, award, or role later, see "Editing content later" below.
 
 ## Editing content later
 
-Everything lives in `index.html` as plain HTML — no templating engine, no build step.
-
-- **Add a research project**: copy a `<div class="track">...</div>` block under `<section id="research">` and edit the text. Give it a thumbnail by adding an `<img class="track-img" src="assets/research/yourfile.svg">` as its first child.
-- **Add a leadership entry**: copy a `<div class="simple-item">...</div>` block under `<section id="leadership">`.
+- **Add a research card**: copy an `<article class="pub">...</article>` block under `<section id="research">`.
+- **Add a leadership/education entry**: copy a `<div class="simple-item">...</div>` block (includes a logo slot).
 - **Add an award**: copy a `<div class="honor-item">...</div>` block under `<section id="honors">`.
-- **Change colors or fonts**: edit the variables at the top of `styles.css` (`--bg`, `--accent`, `--header-font`, etc.) — everything else references them.
-- **Change the nav or section order**: the `<nav class="nav-links">` links in `<header>` and the `<section id="...">` blocks in `<main>` are independent — reorder either as needed, just keep the `href="#id"` / `id="..."` pairs matching.
+- **Change colors or fonts**: edit the variables at the top of `styles.css`.
 
-## Current layout
+## Other notes
 
-The page follows the structure of ada-f.github.io: a sticky top nav bar, your name as a large heading, photo and contact links (Email / GitHub / LinkedIn / CV) flowing inline beneath it, then the bio paragraph directly — no separate "About" label. Small line-art divider illustrations mark the same section seams her page uses them (above your name, after the bio, after Research, after Leadership). Section headings (Featured Research, Leadership & Service, etc.) are plain, unnumbered.
-
-Within that structure, the page keeps the developer-oriented details from earlier passes: bracketed monospace tags (`[computational]`, `[hpc / slurm]`) on each project, a muted single accent color rather than decorative color-coding, and direct "Code" links to your GitHub repos next to the two projects that have public code (biomirage, evolutionDeepLearning).
-
-Research is trimmed to four flagship projects (Zitnik/Harvard, Kellis/MIT CSAIL, the Deep Learning for Biology course project, Infinitopes) — the rest of your experience (Eli Lilly, Kamm Lab, both UT Southwestern positions) lives in the downloadable CV only.
-
-## Things worth knowing about the current placeholders
-
-- **Header font**: currently Playfair Display (bold), matching what you found inspecting Ada's page (`--font-serif` resolved to `"Playfair Display", Georgia, "Times New Roman", serif`).
-- **Divider illustrations & project thumbnails** (all the `.svg` files in `assets/research/`): these are abstract line-art I generated, not real figures from your papers, posters, or graphical abstracts. If you have actual project figures you'd like to use instead, swap them in under the same filenames and they'll appear in the same spots — real figures will read as more substantive than the abstract icons, especially for a technical audience.
-- **Bio paragraphs** under `<section id="about">`: a first draft based on your LinkedIn text, lightly tweaked. Treat as a draft to keep iterating on, not final.
-- **Phone number** from your CV was left off intentionally (public pages typically skip it) — add it near the links row in `index.html` if you want it listed.
-- **Google Scholar**: not linked since none was in your CV or mentioned — add it next to the other links in `<p class="links-row">` if you have one.
+- Phone number from your CV is intentionally left off (add it near the icon-links row in `index.html` if you want it).
+- The five non-featured CV experiences (Eli Lilly, Kamm Lab, both UT Southwestern positions, and the CPP/Single-Cell Transcriptomics project) live in the downloadable CV only, not on the site.

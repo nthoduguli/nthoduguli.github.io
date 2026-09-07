@@ -1,7 +1,22 @@
 (function () {
   "use strict";
 
+  var toggle = document.getElementById("navToggle");
+  var sidebar = document.getElementById("sidebar");
   var navLinks = document.querySelectorAll(".navlink");
+
+  if (toggle && sidebar) {
+    toggle.addEventListener("click", function () {
+      var isOpen = sidebar.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+    navLinks.forEach(function (link) {
+      link.addEventListener("click", function () {
+        sidebar.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
 
   var sections = Array.prototype.map.call(navLinks, function (link) {
     var id = link.getAttribute("data-section");
@@ -11,13 +26,9 @@
   function setActive() {
     var scrollPos = window.scrollY + 140;
     var current = sections[0];
-
     sections.forEach(function (s) {
-      if (s.el.offsetTop <= scrollPos) {
-        current = s;
-      }
+      if (s.el.offsetTop <= scrollPos) current = s;
     });
-
     sections.forEach(function (s) {
       s.link.classList.toggle("active", s === current);
     });
