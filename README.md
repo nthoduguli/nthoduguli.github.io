@@ -1,62 +1,65 @@
 # nikitha-thoduguli.github.io
 
-Personal site — CV, research, and projects. Plain HTML/CSS/JS, no build step.
+Personal site — CV, research, and projects. Plain HTML/CSS/JS, no build step, no dependencies.
 
 ## Files
 
-- `index.html` — all content (edit this to add/change projects, awards, etc.)
-- `styles.css` — all styling (colors are defined once at the top as CSS variables)
-- `script.js` — mobile nav toggle + scroll-based active-link highlighting
+```
+index.html                        all page content
+styles.css                        all styling (colors/fonts as CSS variables at the top)
+script.js                         scroll-based active-nav-link highlighting
+README.md                         this file
+assets/headshot.jpeg              profile photo
+assets/Nikitha_Thoduguli_CV.pdf   downloadable CV (linked from the intro)
+assets/research/harvard.svg       thumbnail for the Harvard/Zitnik project
+assets/research/csail.svg         thumbnail for the MIT CSAIL/Kellis project
+assets/research/course.svg        thumbnail for the Deep Learning for Biology course project
+assets/research/infinitopes.svg   thumbnail for the Infinitopes project
+assets/research/divider-*.svg     four small illustrations marking section breaks
+```
 
 ## Deploy to GitHub Pages (free hosting)
 
-1. **Create a new repository** on GitHub.
+1. **Create a repository** on GitHub.
    - For a *user site* at `https://<your-username>.github.io`, name the repo exactly `<your-username>.github.io`.
    - For a *project site* at `https://<your-username>.github.io/<repo-name>`, name it whatever you like.
 
-2. **Upload these three files** (`index.html`, `styles.css`, `script.js`) to the repo — either drag-and-drop them via the GitHub web UI ("Add file" → "Upload files"), or via git:
+2. **Push all the files above** (keeping the `assets/` folder structure intact):
 
    ```bash
-   git init
-   git add index.html styles.css script.js README.md
+   git add .
    git commit -m "Initial site"
    git branch -M main
-   git remote add origin https://github.com/<your-username>/<repo-name>.git
+   git remote add origin git@github.com:<your-username>/<repo-name>.git
    git push -u origin main
    ```
 
 3. **Turn on GitHub Pages**: in the repo, go to **Settings → Pages**. Under "Build and deployment," set Source to **Deploy from a branch**, branch **main**, folder **/(root)**. Save.
 
-4. Wait 1–2 minutes, then visit the URL GitHub shows on that page (e.g. `https://<your-username>.github.io`).
+4. Wait 1–2 minutes, then visit the URL GitHub shows on that page.
 
 ## Editing content later
 
-Everything lives in `index.html` as plain text inside sections — no templating engine. To:
-- **Add a project**: copy a `<div class="track">...</div>` block under `#research` and edit the text. Set `data-cat` to `compute`, `wetlab`, or `strategy` to color the left border and tag.
-- **Add an award**: copy a `<div class="honor-item">...</div>` block under `#honors`.
-- **Change colors**: edit the `--accent-*` and `--bg*` variables at the top of `styles.css`.
+Everything lives in `index.html` as plain HTML — no templating engine, no build step.
 
-## Notes / things you may want to change
+- **Add a research project**: copy a `<div class="track">...</div>` block under `<section id="research">` and edit the text. Give it a thumbnail by adding an `<img class="track-img" src="assets/research/yourfile.svg">` as its first child.
+- **Add a leadership entry**: copy a `<div class="simple-item">...</div>` block under `<section id="leadership">`.
+- **Add an award**: copy a `<div class="honor-item">...</div>` block under `<section id="honors">`.
+- **Change colors or fonts**: edit the variables at the top of `styles.css` (`--bg`, `--accent`, `--header-font`, etc.) — everything else references them.
+- **Change the nav or section order**: the `<nav class="nav-links">` links in `<header>` and the `<section id="...">` blocks in `<main>` are independent — reorder either as needed, just keep the `href="#id"` / `id="..."` pairs matching.
 
-- Your phone number from the CV was left off the site intentionally (public-facing pages typically skip it) — add it to the `.contact-block` in `index.html` if you want it.
-- Your GitHub (`github.com/nthoduguli`) is now linked in the sidebar. Consider adding direct links to specific repos next to relevant projects under Research if any of them are public — for a computational-science audience, visible code matters as much as the write-up.
-- No Google Scholar link was included since none was in your CV — add it next to the other sidebar links if you have one.
-- A few CV bullets were lightly condensed for web readability; nothing was added that wasn't in the source CV.
+## Current layout
 
-## Your CV PDF
+The page follows the structure of ada-f.github.io: a sticky top nav bar, your name as a large heading, photo and contact links (Email / GitHub / LinkedIn / CV) flowing inline beneath it, then the bio paragraph directly — no separate "About" label. Small line-art divider illustrations mark the same section seams her page uses them (above your name, after the bio, after Research, after Leadership). Section headings (Featured Research, Leadership & Service, etc.) are plain, unnumbered.
 
-Your CV is already included at `assets/Nikitha_Thoduguli_CV.pdf`, and the sidebar's "Download CV (PDF)" link points to it — nothing else to configure. If you update your CV later, just replace that file with the new PDF under the same filename (or update the `href` in `index.html`'s `.cv-link` if you rename it).
+Within that structure, the page keeps the developer-oriented details from earlier passes: bracketed monospace tags (`[computational]`, `[hpc / slurm]`) on each project, a muted single accent color rather than decorative color-coding, and direct "Code" links to your GitHub repos next to the two projects that have public code (biomirage, evolutionDeepLearning).
 
-## Design notes (v2 — tailored for technical/computational internship applications)
+Research is trimmed to four flagship projects (Zitnik/Harvard, Kellis/MIT CSAIL, the Deep Learning for Biology course project, Infinitopes) — the rest of your experience (Eli Lilly, Kamm Lab, both UT Southwestern positions) lives in the downloadable CV only.
 
-This revision dials back the earlier color-coded, decorative styling toward a plainer, research-lab register: one muted accent color instead of three, bracketed monospace tags (`[computational]`) instead of colored pills, hairline dividers instead of tick-mark rulers, and borderless honor entries. The goal is to read as substance-first — closer to a lab's internal documentation than a personal-brand portfolio — while keeping the monospace/technical details that signal comfort with code.
+## Things worth knowing about the current placeholders
 
-The hero and the Harvard Medical School entry now foreground systems/scale work (SLURM, cluster computing) more explicitly, and the Skills section leads with "Languages & Systems" rather than burying C++ and cluster computing under general "programming."
-
-## Design notes (v3 — headshot, Ada-style bio, trimmed research, project images)
-
-- **Headshot**: added to the sidebar (`assets/headshot.jpeg`), circular, above your name.
-- **Header font**: your name and section labels now use Fraunces, a serif — **this is a placeholder guess**, not a confirmed match for the font on Ada's site. To swap it: change the Google Fonts `<link>` in `index.html`'s `<head>` and the `--header-font` variable at the top of `styles.css`.
-- **About section**: merged the old separate tagline/hero and About block into one intro (Ada-style — name/photo/links, then straight into the bio) using your tweaked LinkedIn text as the primary paragraph. This is a first draft, not final — happy to keep workshopping the wording.
-- **Research section**: trimmed to your four flagship projects (Zitnik/Harvard, Kellis/MIT CSAIL, the Deep Learning for Biology course project, and Infinitopes). The other four CV entries (Eli Lilly, Kamm Lab, UT Southwestern x2) were removed from the site — they still live in the downloadable CV.
-- **Project images**: each of the four research entries now has a small abstract line-art illustration (`assets/research/*.svg`) — a single-cell grid for the Harvard benchmark, a helix/haplotype tree for the CSAIL genomics work, a brain/diffusion motif for the course project, and an antibody-receptor docking shape for Infinitopes. These are illustrative placeholders I generated, not real figures from your papers or posters. If you have actual graphical abstracts, poster figures, or diagrams from any of these projects, swapping them in (same filenames, same `assets/research/` folder) would read as more credible than the abstract icons for a technical audience — let me know if you'd like help resizing/cropping any you have.
+- **Header font**: currently Playfair Display (bold), matching what you found inspecting Ada's page (`--font-serif` resolved to `"Playfair Display", Georgia, "Times New Roman", serif`).
+- **Divider illustrations & project thumbnails** (all the `.svg` files in `assets/research/`): these are abstract line-art I generated, not real figures from your papers, posters, or graphical abstracts. If you have actual project figures you'd like to use instead, swap them in under the same filenames and they'll appear in the same spots — real figures will read as more substantive than the abstract icons, especially for a technical audience.
+- **Bio paragraphs** under `<section id="about">`: a first draft based on your LinkedIn text, lightly tweaked. Treat as a draft to keep iterating on, not final.
+- **Phone number** from your CV was left off intentionally (public pages typically skip it) — add it near the links row in `index.html` if you want it listed.
+- **Google Scholar**: not linked since none was in your CV or mentioned — add it next to the other links in `<p class="links-row">` if you have one.

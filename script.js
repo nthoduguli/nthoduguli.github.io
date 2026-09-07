@@ -1,26 +1,8 @@
 (function () {
   "use strict";
 
-  var toggle = document.getElementById("navToggle");
-  var sidebar = document.getElementById("sidebar");
   var navLinks = document.querySelectorAll(".navlink");
 
-  // Mobile nav toggle
-  if (toggle && sidebar) {
-    toggle.addEventListener("click", function () {
-      var isOpen = sidebar.classList.toggle("open");
-      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    });
-
-    navLinks.forEach(function (link) {
-      link.addEventListener("click", function () {
-        sidebar.classList.remove("open");
-        toggle.setAttribute("aria-expanded", "false");
-      });
-    });
-  }
-
-  // Scroll-spy: highlight active nav link based on visible section
   var sections = Array.prototype.map.call(navLinks, function (link) {
     var id = link.getAttribute("data-section");
     return { link: link, el: document.getElementById(id) };

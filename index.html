@@ -12,51 +12,41 @@
 </head>
 <body>
 
-<button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
-  <span></span><span></span><span></span>
-</button>
-
-<aside class="sidebar" id="sidebar">
-  <div class="sidebar-inner">
-    <div class="identity">
-      <img class="headshot" src="assets/headshot.jpeg" alt="Portrait of Nikitha Thoduguli">
-      <h1>Nikitha Thoduguli</h1>
-      <p class="role">CS &amp; Molecular Biology<br>Massachusetts Institute of Technology</p>
+<header class="topbar">
+  <nav class="topnav">
+    <a href="#about" class="brand">Nikitha Thoduguli</a>
+    <div class="nav-links">
+      <a href="#about" class="navlink" data-section="about">About</a>
+      <a href="#research" class="navlink" data-section="research">Research</a>
+      <a href="#leadership" class="navlink" data-section="leadership">Leadership</a>
+      <a href="#honors" class="navlink" data-section="honors">Honors</a>
+      <a href="#education" class="navlink" data-section="education">Education</a>
+      <a href="#skills" class="navlink" data-section="skills">Skills</a>
     </div>
-
-    <nav class="sidenav">
-      <a href="#about" class="navlink" data-section="about"><span class="idx">01</span>About</a>
-      <a href="#research" class="navlink" data-section="research"><span class="idx">02</span>Research</a>
-      <a href="#leadership" class="navlink" data-section="leadership"><span class="idx">03</span>Leadership</a>
-      <a href="#honors" class="navlink" data-section="honors"><span class="idx">04</span>Honors</a>
-      <a href="#education" class="navlink" data-section="education"><span class="idx">05</span>Education</a>
-      <a href="#skills" class="navlink" data-section="skills"><span class="idx">06</span>Skills</a>
-    </nav>
-
-    <div class="contact-block">
-      <a href="mailto:tnikitha@mit.edu">tnikitha@mit.edu</a>
-      <a href="https://github.com/nthoduguli" target="_blank" rel="noopener">github.com/nthoduguli</a>
-      <a href="https://linkedin.com/in/nikitha-thoduguli" target="_blank" rel="noopener">linkedin.com/in/nikitha-thoduguli</a>
-      <p class="location">Cambridge, MA</p>
-      <a class="cv-link" href="assets/Nikitha_Thoduguli_CV.pdf" target="_blank" rel="noopener">Download CV (PDF) &darr;</a>
-    </div>
-  </div>
-</aside>
+  </nav>
+</header>
 
 <main class="content">
 
-  <section class="block hero" id="about">
-    <div class="ruler" aria-hidden="true"></div>
-    <p class="block-label"><span class="idx">01</span>About</p>
-    <div class="block-body">
-      <p>I'm a senior at MIT with hands-on experience in computational genomics, immunomics, and neurobiology. My work applies machine learning and statistical methods to biological data — from ancient genomes to immune receptor structure — to uncover mechanisms with real clinical relevance. I'm driven to bridge ML and biology to push the frontiers of translational research, turning fundamental discoveries into tools that meaningfully improve human health.</p>
-      <p>I'm currently in Manolis Kellis's lab at MIT CSAIL, building algorithms and cluster-scale pipelines in Python and C++ to model biological data that doesn't fit on one machine. Outside the lab, I lead MIT's Biotech Group and run projects for a global health nonprofit working to erase medical debt.</p>
-    </div>
+  <img class="divider divider-top" src="assets/research/divider-dna.svg" alt="">
+
+  <section id="about" class="intro">
+    <h1>Nikitha Thoduguli</h1>
+    <img class="headshot" src="assets/headshot.jpeg" alt="Portrait of Nikitha Thoduguli">
+    <p class="links-row">
+      <a href="mailto:tnikitha@mit.edu">Email</a>
+      <a href="https://github.com/nthoduguli" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/nikitha-thoduguli" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="assets/Nikitha_Thoduguli_CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+    </p>
+    <p>I'm a senior at MIT with hands-on experience in computational genomics, immunomics, and neurobiology. My work applies machine learning and statistical methods to biological data — from ancient genomes to immune receptor structure — to uncover mechanisms with real clinical relevance. I'm driven to bridge ML and biology to push the frontiers of translational research, turning fundamental discoveries into tools that meaningfully improve human health.</p>
+    <p>I'm currently in Manolis Kellis's lab at MIT CSAIL, building algorithms and cluster-scale pipelines in Python and C++ to model biological data that doesn't fit on one machine. Outside the lab, I lead MIT's Biotech Group and run projects for a global health nonprofit working to erase medical debt.</p>
   </section>
 
-  <section class="block" id="research">
-    <div class="ruler" aria-hidden="true"></div>
-    <p class="block-label"><span class="idx">02</span>Research &amp; Experience</p>
+  <img class="divider" src="assets/research/divider-cells.svg" alt="">
+
+  <section id="research">
+    <h2>Featured Research</h2>
 
     <div class="track" data-cat="compute">
       <img class="track-img" src="assets/research/harvard.svg" alt="">
@@ -130,9 +120,10 @@
     </div>
   </section>
 
-  <section class="block" id="leadership">
-    <div class="ruler" aria-hidden="true"></div>
-    <p class="block-label"><span class="idx">03</span>Leadership &amp; Service</p>
+  <img class="divider" src="assets/research/divider-protein.svg" alt="">
+
+  <section id="leadership">
+    <h2>Leadership &amp; Service</h2>
 
     <div class="simple-list">
       <div class="simple-item">
@@ -180,9 +171,10 @@
     </div>
   </section>
 
-  <section class="block" id="honors">
-    <div class="ruler" aria-hidden="true"></div>
-    <p class="block-label"><span class="idx">04</span>Honors &amp; Awards</p>
+  <img class="divider" src="assets/research/divider-network.svg" alt="">
+
+  <section id="honors">
+    <h2>Honors &amp; Awards</h2>
     <div class="honors-list">
       <div class="honor-item">
         <div class="honor-head">
@@ -215,9 +207,8 @@
     </div>
   </section>
 
-  <section class="block" id="education">
-    <div class="ruler" aria-hidden="true"></div>
-    <p class="block-label"><span class="idx">05</span>Education</p>
+  <section id="education">
+    <h2>Education</h2>
     <div class="edu-item">
       <div class="edu-head">
         <h4>Massachusetts Institute of Technology</h4>
@@ -228,9 +219,8 @@
     </div>
   </section>
 
-  <section class="block" id="skills">
-    <div class="ruler" aria-hidden="true"></div>
-    <p class="block-label"><span class="idx">06</span>Skills</p>
+  <section id="skills">
+    <h2>Skills</h2>
     <div class="skills-group">
       <p class="skills-cat">Languages &amp; Systems</p>
       <div class="skill-tags">
@@ -252,9 +242,7 @@
   </section>
 
   <footer class="site-footer">
-    <div class="ruler" aria-hidden="true"></div>
-    <p>Nikitha Thoduguli &middot; <a href="mailto:tnikitha@mit.edu">tnikitha@mit.edu</a> &middot; <a href="https://linkedin.com/in/nikitha-thoduguli" target="_blank" rel="noopener">LinkedIn</a></p>
-    <p class="footer-meta">Built &amp; hosted on GitHub Pages.</p>
+    <p>&copy; 2026 Nikitha Thoduguli &middot; <a href="mailto:tnikitha@mit.edu">Email</a> &middot; <a href="https://github.com/nthoduguli" target="_blank" rel="noopener">GitHub</a> &middot; <a href="https://linkedin.com/in/nikitha-thoduguli" target="_blank" rel="noopener">LinkedIn</a></p>
   </footer>
 
 </main>
