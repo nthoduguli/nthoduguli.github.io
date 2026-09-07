@@ -82,25 +82,17 @@ li:last-child { margin-bottom: 0; }
 .sidenav { display: flex; flex-direction: column; gap: 2px; margin-top: 44px; }
 
 .cv-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+  display: inline-block;
   margin-top: 32px;
-  padding: 10px 14px;
-  border: 1px solid var(--border);
-  border-radius: 6px;
   font-family: var(--mono);
-  font-size: 13px;
-  color: var(--text-muted);
-  transition: color 0.15s ease, border-color 0.15s ease;
+  font-size: 12px;
+  color: var(--text-faint);
+  transition: color 0.15s ease;
 }
 .cv-btn:hover, .cv-btn:focus-visible {
   color: var(--accent);
-  border-color: var(--accent);
   text-decoration: none;
 }
-.cv-btn svg { width: 15px; height: 15px; }
 
 .navlink {
   padding: 8px 10px;
@@ -241,11 +233,6 @@ section > h2 {
 .btn:hover, .btn:focus-visible { color: var(--accent); border-color: var(--accent); text-decoration: none; }
 .btn svg { width: 13px; height: 13px; }
 
-.pub-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
-.tag { font-family: var(--mono); font-size: 11px; color: var(--text-faint); letter-spacing: 0.01em; }
-.tag::before { content: "["; }
-.tag::after { content: "]"; }
-
 /* ============================================
    Leadership / Education — logo rows
    ============================================ */
@@ -272,6 +259,11 @@ section > h2 {
 .simple-item { display: flex; gap: 16px; align-items: flex-start; }
 
 .plain-item p { color: var(--text-muted); font-size: 14.5px; }
+
+.item-top { display: flex; align-items: center; gap: 16px; margin-bottom: 8px; }
+.item-top .org-logo { margin-top: 0; }
+
+.role-item p, .honor-item p { padding-left: 60px; }
 
 .org-logo {
   width: 44px;
@@ -304,9 +296,6 @@ section > h2 {
    ============================================ */
 .honors-list { display: flex; flex-direction: column; }
 .honor-item {
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
   padding: 18px 0;
   border-top: 1px solid var(--border-soft);
 }
@@ -362,7 +351,8 @@ section > h2 {
   .icon-links { justify-content: center; }
   .pub { flex-direction: column; }
   .pub-media { width: 100%; flex-basis: auto; }
-  .simple-item, .honor-item { flex-direction: column; gap: 10px; }
+  .simple-item { flex-direction: column; gap: 10px; }
   .org-logo { width: 32px; height: 32px; }
   .honor-head, .edu-head, .simple-meta { flex-direction: column; gap: 4px; }
+  .role-item p, .honor-item p { padding-left: 0; }
 }

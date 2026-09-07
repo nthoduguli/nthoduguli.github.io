@@ -45,18 +45,18 @@ Note: research figures are named by which lab did the work (zitnik-abstract.png,
 
 ## Layout
 
-Left sidebar for navigation (name, section links, and a "Download CV" button at the bottom). Main content starts with a square rounded-corner headshot to the left of your name and bio, an icon row (Email, Scholar, LinkedIn, GitHub) beneath your name, then the bio — no separate "About" label. All section headings (Featured Research, Leadership & Service, etc.) are centered.
+Left sidebar for navigation (name, section links, and a subtle "Download CV" text link at the bottom). Main content starts with a square rounded-corner headshot to the left of your name and bio, an icon row (Email, Scholar, LinkedIn, GitHub) beneath your name, then the bio — no separate "About" label. All section headings (Featured Research, Leadership & Service, etc.) are centered.
 
-**Featured Research**: each entry is image-left/text-right — a monospace date (with location for Infinitopes), a bold title, institution, a "Supervisor: ..." line beneath it, your contribution bullets, then pill-style buttons (Preprint/Code) and bracketed monospace tags at the bottom.
+**Featured Research**: each entry is image-left/text-right — a monospace date (with location for Infinitopes), a bold title, institution, a "Supervisor: ..." line beneath it, your contribution bullets, then pill-style buttons (Preprint/Code) where applicable.
 
-**Leadership & Service**: grouped under four subheadings (MIT Biotech Group, MIT Global Health Alliance, Camp Kesem at MIT, Teaching), each with its org logo — once at the subheading level for single-logo groups, or per-entry for Teaching since the two TA roles belong to different departments.
+**Leadership & Service**: grouped under four subheadings (MIT Biotech Group, MIT Global Health Alliance, Camp Kesem at MIT, Teaching), each with its org logo — once at the subheading level for single-logo groups, or per-entry for Teaching since the two TA roles belong to different departments. Logos sit inline with each entry's title row, with the description hanging below in a matching indent.
 
-**Honors & Awards** and **Education**: each entry has its own logo to the left of the text, same pattern as Leadership.
+**Honors & Awards** and **Education**: each entry has its own logo, same inline-with-title treatment as Leadership.
 
 ## Editing content later
 
 - **Add a research card**: copy an `<article class="pub">...</article>` block under `<section id="research">`.
-- **Add a leadership entry**: copy a `<div class="plain-item">...</div>` (grouped, no logo) or `<div class="simple-item">...</div>` (has its own logo) inside the relevant `.leadership-group`. To add a whole new org, copy an entire `<div class="leadership-group">...</div>` block.
+- **Add a leadership entry**: inside the relevant `.leadership-group`, copy a `<div class="plain-item">...</div>` (grouped org, no logo — logo lives at the subheading) or a `<div class="role-item">...</div>` (has its own logo, like Teaching). To add a whole new org, copy an entire `<div class="leadership-group">...</div>` block.
 - **Add an award or education entry**: copy a `<div class="honor-item">...</div>` or the Education `<div class="simple-item">...</div>` block — both include a logo slot.
 - **Change colors or fonts**: edit the variables at the top of `styles.css`.
 
