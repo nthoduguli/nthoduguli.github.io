@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nikitha Thoduguli</title>
+<meta name="description" content="Nikitha Thoduguli — computational genomics and machine learning for biology, MIT.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+  <span></span><span></span><span></span>
+</button>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-inner">
+    <div class="identity">
+      <h1>Nikitha<br>Thoduguli</h1>
+      <p class="role">CS &amp; Molecular Biology<br>Massachusetts Institute of Technology</p>
+    </div>
+
+    <nav class="sidenav">
+      <a href="#about" class="navlink" data-section="about"><span class="idx">01</span>About</a>
+      <a href="#research" class="navlink" data-section="research"><span class="idx">02</span>Research</a>
+      <a href="#leadership" class="navlink" data-section="leadership"><span class="idx">03</span>Leadership</a>
+      <a href="#honors" class="navlink" data-section="honors"><span class="idx">04</span>Honors</a>
+      <a href="#education" class="navlink" data-section="education"><span class="idx">05</span>Education</a>
+      <a href="#skills" class="navlink" data-section="skills"><span class="idx">06</span>Skills</a>
+    </nav>
+
+    <div class="contact-block">
+      <a href="mailto:tnikitha@mit.edu">tnikitha@mit.edu</a>
+      <a href="https://github.com/nthoduguli" target="_blank" rel="noopener">github.com/nthoduguli</a>
+      <a href="https://linkedin.com/in/nikitha-thoduguli" target="_blank" rel="noopener">linkedin.com/in/nikitha-thoduguli</a>
+      <p class="location">Cambridge, MA</p>
+      <a class="cv-link" href="assets/Nikitha_Thoduguli_CV.pdf" target="_blank" rel="noopener">Download CV (PDF) &darr;</a>
+    </div>
+  </div>
+</aside>
+
+<main class="content">
+
+  <section class="hero" id="top">
+    <div class="ruler" aria-hidden="true"></div>
+    <p class="hero-kicker">computational genomics &middot; single-cell biology &middot; large-scale ml</p>
+    <h2 class="hero-line">Building tools to read the genome —<br>from ancient hominins to single cells.</h2>
+    <p class="hero-sub">I'm a rising senior at MIT studying Computer Science &amp; Molecular Biology, with minors in Neuroscience and Political Science. My work sits at the intersection of computational genomics, single-cell transcriptomics, and machine learning at scale — currently in Manolis Kellis's lab at MIT CSAIL, building algorithms and cluster-scale pipelines in Python and C++ to model biological data that doesn't fit on one machine.</p>
+  </section>
+
+  <section class="block" id="about">
+    <div class="ruler" aria-hidden="true"></div>
+    <p class="block-label"><span class="idx">01</span>About</p>
+    <div class="block-body">
+      <p>I work on problems where genomes, cells, and models meet — reconstructing personalized genomes for ancient and modern hominins, building benchmarks that test whether single-cell language models actually understand biology, and designing generative models that connect cell state to chromatin structure.</p>
+      <p>Outside the lab, I lead MIT's Biotech Group, run projects for a global health nonprofit erasing medical debt, and TA introductory physics and biological engineering courses.</p>
+    </div>
+  </section>
+
+  <section class="block" id="research">
+    <div class="ruler" aria-hidden="true"></div>
+    <p class="block-label"><span class="idx">02</span>Research &amp; Experience</p>
+
+    <div class="track" data-cat="compute">
+      <div class="track-meta">
+        <span class="tag">computational</span>
+        <span class="tag">hpc / slurm</span>
+        <span class="date">Summer 2026</span>
+      </div>
+      <h3>Summer Research Intern</h3>
+      <p class="track-sub">Harvard Medical School, Dept. of Biomedical Informatics — Supervisor: Prof. Marinka Zitnik</p>
+      <ul>
+        <li>Designed a modality-sensitivity benchmark for single-cell multimodal LLMs, using a biologically inert baseline, gene order/identity scrambles, and graded marker-gene knockouts (k = 1–25) with expression-matched controls to isolate true biological signal from spurious noise.</li>
+        <li>Scaled the benchmark to a 300k-cell, 35-cell-type atlas via a sharded SLURM pipeline benchmarking 5 model backends across 2 families (Cell2Sentence, CellWhisperer) using a two-tier, ontology-aware scoring scheme.</li>
+      </ul>
+      <p class="track-status">Manuscript for ICLR submission in progress &middot; <a href="https://github.com/mims-harvard/biomirage" target="_blank" rel="noopener">Code</a></p>
+    </div>
+
+    <div class="track" data-cat="compute">
+      <div class="track-meta">
+        <span class="tag">computational genomics</span>
+        <span class="date">Fall 2023 – present</span>
+      </div>
+      <h3>Undergraduate Researcher</h3>
+      <p class="track-sub">MIT CSAIL — Supervisor: Prof. Manolis Kellis</p>
+
+      <div class="subproject">
+        <p class="subproject-title">Evolutionary Comparative Genomics <span class="award-inline">Merck Prize '25 · EECS Research Award '25</span></p>
+        <ul>
+          <li>Developed ANCoRA, a damage-aware empirical Bayes algorithm for reference-guided diploid genome assembly, and applied it to build personalized genomes for 34 haplotypes across 17 individuals (5 modern humans, 4 archaic hominins, 8 great apes).</li>
+          <li>Applied transformer-based deep learning to predict chromatin accessibility across 100 epigenomic contexts, defining 11k+ lineage-specific cis-regulatory elements enriched in neurodevelopmental pathways and disease loci.</li>
+          <li>Designed the variant-prioritization scheme that nominated a hominin-gained enhancer of GNB5, later validated by collaborators via luciferase reporter assays and reciprocal allele-swap experiments.</li>
+          <li>Presented as an oral platform talk at the 2025 American Society of Human Genetics Annual Meeting (top 8% of submitted abstracts).</li>
+        </ul>
+        <p class="track-status">Manuscript submitted to Nature Genetics &middot; <a href="https://github.com/rimangan/evolutionDeepLearning" target="_blank" rel="noopener">Code</a></p>
+      </div>
+
+      <div class="subproject">
+        <p class="subproject-title">Single-Cell Transcriptomics</p>
+        <ul>
+          <li>Applied the lab's Cell-Projected Phenotypes (CPP) framework to compute cell-level Parkinson's disease pathology scores and identify donors whose transcriptional states concord with case/control labels, addressing disease heterogeneity for mechanistically grounded biomarker analysis.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="track" data-cat="compute">
+      <div class="track-meta">
+        <span class="tag">generative modeling</span>
+        <span class="date">Spring 2026</span>
+      </div>
+      <h3>Course Research Project</h3>
+      <p class="track-sub">MIT — Deep Learning for Biology</p>
+      <ul>
+        <li>Independently designed and developed a multimodal model for generating cell-state-conditioned chromatin accessibility tracks in the context of Alzheimer's disease, using VAE embeddings for cell state and a discrete diffusion module.</li>
+      </ul>
+    </div>
+
+    <div class="track" data-cat="compute">
+      <div class="track-meta">
+        <span class="tag">computational immunomics</span>
+        <span class="date">Summer 2025 · Oxford, UK</span>
+      </div>
+      <h3>Computational Immunomics Intern</h3>
+      <p class="track-sub">Infinitopes — Supervisor: Dr. Georges Bedran</p>
+      <ul>
+        <li>Built an end-to-end computational pipeline for generating, co-folding, and analyzing TCR–pMHC complex structures using Boltz-2, a state-of-the-art deep learning sequence-to-structure model.</li>
+        <li>Designed and executed five benchmarking studies assessing Boltz-2 performance in antigen recognition, structural accuracy, and immune specificity.</li>
+      </ul>
+    </div>
+
+    <div class="track" data-cat="strategy">
+      <div class="track-meta">
+        <span class="tag">strategy</span>
+        <span class="date">January 2024 · Seaport, MA</span>
+      </div>
+      <h3>Genetic Medicines Scholar</h3>
+      <p class="track-sub">Eli Lilly</p>
+      <ul>
+        <li>Pitched a novel genetic therapy for ALS — spanning target identification, drug delivery design, preclinical and clinical study planning, and regulatory approval strategy — as one of 12 MIT undergraduates selected for the inaugural cohort.</li>
+      </ul>
+    </div>
+
+    <div class="track" data-cat="wetlab">
+      <div class="track-meta">
+        <span class="tag">tissue engineering</span>
+        <span class="date">June – December 2024</span>
+      </div>
+      <h3>Undergraduate Researcher</h3>
+      <p class="track-sub">MIT Biological Engineering — Supervisor: Prof. Roger Kamm</p>
+      <ul>
+        <li>Engineered a neuronal tissue mold in CAD to prevent hypoxic necrotization by incorporating intentional void space for vascular ingrowth, addressing a key bottleneck in brain organoid viability.</li>
+        <li>Conducted on- and off-chip gelation trials to optimize gelatin-dextran hydrogel composition for synthetic vascular scaffolds in brain organoid models.</li>
+      </ul>
+    </div>
+
+    <div class="track" data-cat="compute">
+      <div class="track-meta">
+        <span class="tag">computational neuroscience</span>
+        <span class="date">Summer 2023</span>
+      </div>
+      <h3>Computational Neuroscience Researcher</h3>
+      <p class="track-sub">UT Southwestern, Biomedical Informatics — Supervisor: Prof. Wenhao Zhang</p>
+      <ul>
+        <li>Simulated Bayesian causal inference for multisensory cue combination in Python via importance sampling and Monte Carlo methods, modeling how the brain integrates visual and auditory stimuli into unified spatial percepts.</li>
+        <li>Implemented Langevin sampling for Bayesian causal inference, incorporating normalization constants and Gaussian noise to improve posterior estimation.</li>
+      </ul>
+    </div>
+
+    <div class="track" data-cat="wetlab">
+      <div class="track-meta">
+        <span class="tag">wet lab</span>
+        <span class="date">Summer 2022</span>
+      </div>
+      <h3>Summer Intern</h3>
+      <p class="track-sub">UT Southwestern Urology — Supervisor: Prof. Douglas Strand</p>
+      <ul>
+        <li>Selected for the UT Southwestern STARS Summer Research Program (&lt;5% accepted).</li>
+        <li>Constructed a cellular anatomy for the female urethra and characterized two previously unknown distinct subtypes of fibroblasts using single-cell RNA-seq data.</li>
+        <li>Performed in situ hybridization with RNAscope to validate spatial separation of the fibroblast subtypes; dissected lower urinary tracts from human donors and sutured tissue in organ bath experiments.</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <section class="block" id="leadership">
+    <div class="ruler" aria-hidden="true"></div>
+    <p class="block-label"><span class="idx">03</span>Leadership &amp; Service</p>
+
+    <div class="simple-list">
+      <div class="simple-item">
+        <div class="simple-meta">
+          <h4>President, MIT Biotech Group</h4>
+          <span class="date">Fall 2026 – present</span>
+        </div>
+        <p>Oversee six initiatives and 100+ members; coordinate the annual MBG–Merck Biologics &amp; Vaccines Symposium end-to-end, including speakers, poster presenters, logistics, and sponsorships.</p>
+      </div>
+      <div class="simple-item">
+        <div class="simple-meta">
+          <h4>Director of Community Engagement, MIT Biotech Group</h4>
+          <span class="date">2024 – 2026</span>
+        </div>
+        <p>Co-launched a $5K scholarship with Harvard Biotech Club, now in its third year; organized equity-focused fireside chats connecting MBG members with MIT faculty and industry leaders.</p>
+      </div>
+      <div class="simple-item">
+        <div class="simple-meta">
+          <h4>Projects Team Lead, Global Health Alliance</h4>
+          <span class="date">Fall 2024 – present</span>
+        </div>
+        <p>Led a team of 5 to raise funds that erased &gt;$100K in medical debt at $1 per $100 forgiven; developed patient education video outlines on maternal and child health for Village Health Works in Burundi.</p>
+      </div>
+      <div class="simple-item">
+        <div class="simple-meta">
+          <h4>Camp Kesem Counselor</h4>
+          <span class="date">2024 – present</span>
+        </div>
+        <p>Fundraised &gt;$500 annually to support two free weeks of sleepaway camp for 200+ Boston-area children affected by a parent's cancer diagnosis, through MIT's student-run chapter.</p>
+      </div>
+      <div class="simple-item">
+        <div class="simple-meta">
+          <h4>8.02 (Physics II) TA</h4>
+          <span class="date">Spring 2024</span>
+        </div>
+        <p>Supported a flipped-classroom introductory E&amp;M course by attending lectures, fielding student questions, and leading weekly problem-solving sessions.</p>
+      </div>
+      <div class="simple-item">
+        <div class="simple-meta">
+          <h4>20.A06 (Biological Engineering) TA</h4>
+          <span class="date">Fall 2024</span>
+        </div>
+        <p>Improved the Biobots curriculum within MIT's freshman advising seminar, teaching biofabrication, 3D design, circuits, and neuronal cell and tissue culture.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="honors">
+    <div class="ruler" aria-hidden="true"></div>
+    <p class="block-label"><span class="idx">04</span>Honors &amp; Awards</p>
+    <div class="honors-list">
+      <div class="honor-item">
+        <div class="honor-head">
+          <h4>Merck Prize</h4>
+          <span class="date">2025</span>
+        </div>
+        <p>MIT Department of Biology — awarded for outstanding research and academic performance in biophysical or bioinformatics sciences.</p>
+      </div>
+      <div class="honor-item">
+        <div class="honor-head">
+          <h4>Morais &amp; Rosenblum UROP Award</h4>
+          <span class="date">2025</span>
+        </div>
+        <p>MIT EECS — departmental recognition for undergraduate research excellence.</p>
+      </div>
+      <div class="honor-item">
+        <div class="honor-head">
+          <h4>Platform Talk, ASHG Annual Meeting</h4>
+          <span class="date">2025</span>
+        </div>
+        <p>Selected from top-scoring abstract submissions for a 10-minute oral presentation (&lt;8% accepted).</p>
+      </div>
+      <div class="honor-item">
+        <div class="honor-head">
+          <h4>HKN Member, IEEE Eta Kappa Nu</h4>
+          <span class="date">2025</span>
+        </div>
+        <p>Invitation-only honor society for EECS students; juniors in the top 25% of their class are eligible.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="education">
+    <div class="ruler" aria-hidden="true"></div>
+    <p class="block-label"><span class="idx">05</span>Education</p>
+    <div class="edu-item">
+      <div class="edu-head">
+        <h4>Massachusetts Institute of Technology</h4>
+        <span class="date">Expected June 2027</span>
+      </div>
+      <p class="track-sub">Cambridge, MA · GPA 5.0/5.0</p>
+      <p>Major in Computer Science &amp; Molecular Biology. Minors in Neuroscience and Political Science.</p>
+    </div>
+  </section>
+
+  <section class="block" id="skills">
+    <div class="ruler" aria-hidden="true"></div>
+    <p class="block-label"><span class="idx">06</span>Skills</p>
+    <div class="skills-group">
+      <p class="skills-cat">Languages &amp; Systems</p>
+      <div class="skill-tags">
+        <span>Python</span><span>C++</span><span>Go</span><span>R</span><span>bash</span><span>PyTorch</span><span>SLURM / cluster computing</span><span>Linux</span><span>ML on AWS</span><span>Git</span>
+      </div>
+    </div>
+    <div class="skills-group">
+      <p class="skills-cat">Machine Learning &amp; Genomics</p>
+      <div class="skill-tags">
+        <span>transformer architectures</span><span>diffusion models</span><span>VAEs</span><span>single-cell analysis</span><span>Seurat</span><span>Harmony</span><span>sequence-to-function modeling</span>
+      </div>
+    </div>
+    <div class="skills-group">
+      <p class="skills-cat">Experimental &amp; Design</p>
+      <div class="skill-tags">
+        <span>neuronal cell culture</span><span>brain organoids</span><span>biofabrication</span><span>tissue engineering</span><span>CAD (SolidWorks, Fusion 360)</span><span>immunohistochemistry</span><span>western blot</span><span>qPCR</span><span>CRISPR</span><span>protein purification</span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="ruler" aria-hidden="true"></div>
+    <p>Nikitha Thoduguli &middot; <a href="mailto:tnikitha@mit.edu">tnikitha@mit.edu</a> &middot; <a href="https://linkedin.com/in/nikitha-thoduguli" target="_blank" rel="noopener">LinkedIn</a></p>
+    <p class="footer-meta">Built &amp; hosted on GitHub Pages.</p>
+  </footer>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
