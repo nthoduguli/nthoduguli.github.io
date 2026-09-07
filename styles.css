@@ -132,9 +132,26 @@ li:last-child { margin-bottom: 0; }
 /* ============================================
    Main content
    ============================================ */
-.content { margin-left: var(--sidebar-w); padding: 64px 56px 80px; max-width: calc(var(--content-max) + 56px * 2); }
+.content { margin-left: var(--sidebar-w); }
 
-.intro { display: flex; gap: 28px; align-items: flex-start; margin-bottom: 72px; }
+.content-inner { max-width: var(--content-max); margin: 0 auto; padding: 64px 24px 80px; }
+
+.intro { text-align: center; margin-bottom: 72px; }
+
+.intro h1 {
+  font-family: var(--header-font);
+  font-weight: 700;
+  font-size: clamp(1.7rem, 3.4vw, 2.1rem);
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
+}
+
+.icon-links { display: flex; justify-content: center; gap: 16px; margin-bottom: 32px; }
+.icon-links a { color: var(--text-muted); display: inline-flex; }
+.icon-links a:hover { color: var(--accent); }
+.icon-links svg { width: 20px; height: 20px; }
+
+.bio-row { display: flex; gap: 28px; align-items: center; text-align: left; }
 
 .headshot {
   width: 130px;
@@ -144,22 +161,8 @@ li:last-child { margin-bottom: 0; }
   flex-shrink: 0;
 }
 
-.intro-text { flex: 1 1 auto; min-width: 0; }
-
-.intro-text h1 {
-  font-family: var(--header-font);
-  font-weight: 700;
-  font-size: clamp(1.6rem, 3.2vw, 2rem);
-  letter-spacing: -0.01em;
-  margin-bottom: 16px;
-}
-
-.icon-links { display: flex; gap: 16px; margin-bottom: 22px; }
-.icon-links a { color: var(--text-muted); display: inline-flex; }
-.icon-links a:hover { color: var(--accent); }
-.icon-links svg { width: 20px; height: 20px; }
-
-.intro-text p { text-align: left; color: var(--text-muted); }
+.bio-text { flex: 1 1 auto; min-width: 0; }
+.bio-text p { color: var(--text-muted); }
 
 section { scroll-margin-top: 32px; }
 section + section, .intro + section { margin-top: 68px; }
@@ -342,12 +345,13 @@ section > h2 {
     box-shadow: 0 0 40px rgba(0,0,0,0.4);
   }
   .sidebar.open { transform: translateX(0); }
-  .content { margin-left: 0; padding: 84px 24px 64px; }
+  .content { margin-left: 0; }
+  .content-inner { padding: 84px 24px 64px; }
 }
 
 @media (max-width: 560px) {
-  .intro { flex-direction: column; align-items: center; text-align: center; }
-  .intro-text p { text-align: left; }
+  .bio-row { flex-direction: column; align-items: center; text-align: center; }
+  .bio-text p { text-align: left; }
   .icon-links { justify-content: center; }
   .pub { flex-direction: column; }
   .pub-media { width: 100%; flex-basis: auto; }
