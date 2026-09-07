@@ -81,6 +81,27 @@ li:last-child { margin-bottom: 0; }
 
 .sidenav { display: flex; flex-direction: column; gap: 2px; margin-top: 44px; }
 
+.cv-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 32px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--text-muted);
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.cv-btn:hover, .cv-btn:focus-visible {
+  color: var(--accent);
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.cv-btn svg { width: 15px; height: 15px; }
+
 .navlink {
   padding: 8px 10px;
   margin: 0 -10px;
@@ -121,24 +142,32 @@ li:last-child { margin-bottom: 0; }
    ============================================ */
 .content { margin-left: var(--sidebar-w); padding: 64px 56px 80px; max-width: calc(var(--content-max) + 56px * 2); }
 
-.intro { text-align: center; margin-bottom: 72px; }
+.intro { display: flex; gap: 28px; align-items: flex-start; margin-bottom: 72px; }
 
-.headshot { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; }
-
-.intro h1 {
-  font-family: var(--header-font);
-  font-weight: 700;
-  font-size: clamp(1.7rem, 3.4vw, 2.1rem);
-  letter-spacing: -0.01em;
-  margin-bottom: 20px;
+.headshot {
+  width: 130px;
+  height: 130px;
+  border-radius: 16px;
+  object-fit: cover;
+  flex-shrink: 0;
 }
 
-.icon-links { display: flex; justify-content: center; gap: 18px; margin-bottom: 28px; }
+.intro-text { flex: 1 1 auto; min-width: 0; }
+
+.intro-text h1 {
+  font-family: var(--header-font);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 3.2vw, 2rem);
+  letter-spacing: -0.01em;
+  margin-bottom: 16px;
+}
+
+.icon-links { display: flex; gap: 16px; margin-bottom: 22px; }
 .icon-links a { color: var(--text-muted); display: inline-flex; }
 .icon-links a:hover { color: var(--accent); }
 .icon-links svg { width: 20px; height: 20px; }
 
-.intro p { text-align: left; color: var(--text-muted); max-width: 620px; margin-left: auto; margin-right: auto; }
+.intro-text p { text-align: left; color: var(--text-muted); }
 
 section { scroll-margin-top: 32px; }
 section + section, .intro + section { margin-top: 68px; }
@@ -148,17 +177,12 @@ section > h2 {
   font-weight: 700;
   font-size: 21px;
   margin-bottom: 28px;
+  text-align: center;
 }
 
 /* ============================================
    Publication-style research cards
    ============================================ */
-.pub-group-head {
-  font-size: 13px;
-  color: var(--text-faint);
-  font-family: var(--mono);
-  margin: 36px 0 18px;
-}
 
 .pub {
   display: flex;
@@ -196,7 +220,9 @@ section > h2 {
 
 .pub-byline { font-size: 13.5px; color: var(--text-muted); margin-bottom: 4px; }
 
-.pub-status { font-size: 12.5px; color: var(--text-faint); margin-top: 10px; }
+.pub-supervisor { font-size: 13.5px; color: var(--text-faint); margin-bottom: 4px; }
+
+.pub-status { font-size: 12.5px; color: var(--text-faint); font-family: var(--mono); margin-top: 10px; }
 
 .pub-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
 
@@ -223,9 +249,29 @@ section > h2 {
 /* ============================================
    Leadership / Education — logo rows
    ============================================ */
+.leadership-group { margin-bottom: 36px; }
+.leadership-group:last-child { margin-bottom: 0; }
+
+.group-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-soft);
+}
+.group-head h3 {
+  font-family: var(--header-font);
+  font-weight: 600;
+  font-size: 16px;
+}
+.group-head .org-logo { width: 34px; height: 34px; margin-top: 0; }
+
 .simple-list { display: flex; flex-direction: column; gap: 26px; }
 
 .simple-item { display: flex; gap: 16px; align-items: flex-start; }
+
+.plain-item p { color: var(--text-muted); font-size: 14.5px; }
 
 .org-logo {
   width: 44px;
@@ -257,7 +303,13 @@ section > h2 {
    Honors
    ============================================ */
 .honors-list { display: flex; flex-direction: column; }
-.honor-item { padding: 16px 0; border-top: 1px solid var(--border-soft); }
+.honor-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 18px 0;
+  border-top: 1px solid var(--border-soft);
+}
 .honor-item:last-child { border-bottom: 1px solid var(--border-soft); }
 .honor-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: 5px; }
 .honor-head h4 { font-size: 14.5px; font-weight: 600; }
@@ -305,9 +357,12 @@ section > h2 {
 }
 
 @media (max-width: 560px) {
+  .intro { flex-direction: column; align-items: center; text-align: center; }
+  .intro-text p { text-align: left; }
+  .icon-links { justify-content: center; }
   .pub { flex-direction: column; }
   .pub-media { width: 100%; flex-basis: auto; }
-  .simple-item { flex-direction: column; gap: 10px; }
+  .simple-item, .honor-item { flex-direction: column; gap: 10px; }
   .org-logo { width: 32px; height: 32px; }
   .honor-head, .edu-head, .simple-meta { flex-direction: column; gap: 4px; }
 }
