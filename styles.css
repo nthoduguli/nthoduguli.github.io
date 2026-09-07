@@ -15,6 +15,7 @@
 
   --mono: 'IBM Plex Mono', 'SF Mono', Consolas, monospace;
   --sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --header-font: 'Playfair Display', Georgia, 'Times New Roman', serif;
 
   --sidebar-w: 280px;
   --content-max: 700px;
@@ -104,10 +105,20 @@ li:last-child { margin-bottom: 0; }
 }
 
 .identity h1 {
+  font-family: var(--header-font);
   font-size: 26px;
   line-height: 1.28;
   letter-spacing: -0.01em;
-  font-weight: 600;
+  font-weight: 700;
+}
+
+.headshot {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  display: block;
 }
 
 .role {
@@ -208,28 +219,6 @@ li:last-child { margin-bottom: 0; }
   max-width: calc(var(--content-max) + 56px * 2);
 }
 
-.hero-kicker {
-  font-family: var(--mono);
-  font-size: 12px;
-  color: var(--text-faint);
-  margin: 0 0 22px;
-}
-
-.hero-line {
-  font-size: 32px;
-  line-height: 1.34;
-  letter-spacing: -0.01em;
-  max-width: 600px;
-  margin-bottom: 22px;
-  font-weight: 600;
-}
-
-.hero-sub {
-  max-width: var(--content-max);
-  color: var(--text-muted);
-  font-size: 15.5px;
-}
-
 .block {
   margin-top: 72px;
   scroll-margin-top: 32px;
@@ -239,7 +228,8 @@ li:last-child { margin-bottom: 0; }
   display: flex;
   align-items: baseline;
   gap: 12px;
-  font-size: 18px;
+  font-family: var(--header-font);
+  font-size: 19px;
   font-weight: 600;
   margin-bottom: 30px;
 }
@@ -260,6 +250,15 @@ li:last-child { margin-bottom: 0; }
   position: relative;
 }
 .track:last-child { margin-bottom: 0; }
+
+.track-img {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  border: 1px solid var(--border-soft);
+  margin-bottom: 16px;
+}
 
 .track-meta {
   display: flex;
@@ -422,8 +421,6 @@ li:last-child { margin-bottom: 0; }
   .sidebar.open { transform: translateX(0); }
 
   .content { margin-left: 0; padding: 84px 24px 64px; }
-
-  .hero-line { font-size: 25px; }
 }
 
 @media (max-width: 480px) {
