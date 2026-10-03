@@ -211,6 +211,9 @@ section > h2 {
 .pub-media a { display: block; transition: opacity 0.15s ease; }
 .pub-media a:hover { opacity: 0.85; }
 
+.pub--wide-media { flex-direction: column; }
+.pub--wide-media .pub-media { width: 100%; flex: none; margin-bottom: 4px; }
+
 .pub-body { flex: 1 1 auto; min-width: 0; }
 
 .pub-date {
